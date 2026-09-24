@@ -13,6 +13,11 @@ def main() -> None:
     load_dotenv()
 
     api_key = os.getenv("ALPHA_VANTAGE_API_KEY")
+
+    if not api_key:
+        print("API-nyckeln saknas. Kontrollera din .env-fil.")
+        return
+    
     symbol = "IBM"
 
     try:
